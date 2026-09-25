@@ -1,0 +1,651 @@
+/* Styling background utama jika video sedang proses load */
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pastikan video background diposisikan dengan benar di belakang */
+video#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.4); /* Efek gelap agar teks dan tombol lebih jelas dibaca */
+}
+
+/* Mengatur gaya konten agar posisinya di tengah atas */
+.content {
+    position: relative;
+    text-align: center;
+    padding-top: 10px; /* Diperkecil supaya posisinya semakin ke atas */
+    color: white; 
+    font-family: Arial, sans-serif;
+}
+
+/* Tambahan khusus untuk memperbesar ukuran tulisan */
+.content h1 {
+    font-size: 48px; /* Anda bisa ubah angkanya (misal 56px atau 64px) kalau kurang besar */
+}
+
+/* Foto / Logo Utama di Atas (Ukuran ideal di laptop) */
+.logo-store {
+    width: 100%;             
+    max-width: 700px;        /* Ukuran ideal: besar dan jelas, tapi tidak selebar layar */
+    height: auto;            
+    object-fit: contain;     
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+     border: 1px solid white; 
+}
+
+/* Pengaturan khusus jika dibuka di HP (Mobile View) */
+@media (max-width: 768px) {
+    .logo-store {
+        max-width: 100%;     /* Menyesuaikan penuh di layar HP */
+    }
+}
+
+/* Mengatur tampilan garis pemisah (separator) panjang warna abu-abu */
+.separator {
+    width: 60%;             /* Membuat garisnya panjang (bisa diatur misal 70% atau 80%) */
+    max-width: 600px;       /* Batas maksimal panjang garis di layar besar */
+    height: 3px;            /* Ketebalan garis */
+    background-color: #888888; /* Warna abu-abu */
+    border: none;           /* Menghilangkan garis bawaan browser */
+    border-radius: 2px;     /* Ujung garis sedikit melengkung */
+    margin: 15px auto 30px auto; /* Jarak atas dan bawah garis */
+}
+
+/* Container Kotak Fitur agar menyesuaikan layar HP */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1300px;
+    margin-top: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Memperbesar Kotak Card Fitur agar lebih jelas dilihat */
+.feature-card {
+    background-color: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 18px 15px;
+    width: 260px;            /* Lebar kotak diperbesar dari sebelumnya */
+    min-height: 75px;        /* Tinggi minimal diperbesar */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Memperbesar Kotak Ikon di Dalamnya */
+.feature-icon {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 10px;
+    width: 50px;             /* Ukuran ikon sedikit diperbesar */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;         /* Ukuran emoji diperbesar */
+    flex-shrink: 0;
+}
+
+/* Memperbesar Ukuran Teks di Dalam Card */
+.feature-text h3 {
+    font-size: 15px;         /* Judul lebih besar & jelas */
+    margin: 0 0 4px 0;
+    color: #ffffff;
+}
+
+.feature-text p {
+    font-size: 12px;         /* Deskripsi lebih mudah dibaca di HP */
+    margin: 0;
+    color: #cccccc;
+    line-height: 1.35;
+}
+/* Membuat kotak WhatsApp bisa diklik layaknya tombol */
+.wa-btn {
+    text-decoration: none;   /* Menghilangkan garis bawah bawaan link */
+    cursor: pointer;
+}
+
+/* Efek khusus saat kursor menyentuh tombol WA */
+.wa-btn:hover {
+    border-color: #25d366;   /* Warna garis berubah jadi hijau ala WhatsApp */
+    transform: translateY(-5px);
+}
+
+
+/* Tombol Beli / Order via WA Terbesar & Mencolok */
+.buy-btn {
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #25d366, #128c7e); 
+    color: #ffffff;
+    padding: 18px 45px;      /* Ukuran tombol diperbesar */
+    font-size: 18px;         /* Ukuran teks diperbesar */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 35px;
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 1.2px;
+}
+
+.buy-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+}
+
+/* Container Tabel */
+/* Container Tabel agar diposisikan tepat di tengah */
+.table-container {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 25px;
+    margin-left: auto;   /* Membuat sisi kiri otomatis seimbang */
+    margin-right:  auto;  /* Membuat sisi kanan otomatis seimbang */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan isinya rata tengah secara horizontal */
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Desain Tabel Utama */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Styling Baris dan Kolom Tabel */
+.info-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 15px 18px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Kolom Ikon */
+.icon-cell {
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(40, 40, 40, 0.6);
+}
+
+/* Kolom Judul */
+.title-cell {
+    font-weight: bold;
+    width: 30%;
+    color: #ffffff;
+}
+
+/* Kolom Deskripsi */
+.desc-cell {
+    color: #cccccc;
+    text-align: left;
+}
+
+/* Efek saat baris tabel disentuh kursor */
+.info-table tr:hover {
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.seperator-2 {
+     width: 60%;             /* Membuat garisnya panjang (bisa diatur misal 70% atau 80%) */
+    max-width: 600px;       /* Batas maksimal panjang garis di layar besar */
+    height: 3px;            /* Ketebalan garis */
+    background-color: #888888; /* Warna abu-abu */
+    border: none;           /* Menghilangkan garis bawaan browser */
+    border-radius: 2px;     /* Ujung garis sedikit melengkung */
+    margin: 15px auto 30px auto; /* Jarak atas dan bawah garis */
+}
+
+.seperator-3 {
+     width: 60%;             /* Membuat garisnya panjang (bisa diatur misal 70% atau 80%) */
+    max-width: 600px;       /* Batas maksimal panjang garis di layar besar */
+    height: 3px;            /* Ketebalan garis */
+    background-color: #888888; /* Warna abu-abu */
+    border: none;           /* Menghilangkan garis bawaan browser */
+    border-radius: 2px;     /* Ujung garis sedikit melengkung */
+    margin: 15px auto 30px auto; /* Jarak atas dan bawah garis */
+}
+
+.logo-preview {
+    display: block;          /* Agar gambar menjadi block elemen dan bisa ditengahin */
+    width: 200%;              /* Lebar banner memenuhi sebagian besar layar */
+    max-width: 1000px;       /* Batas maksimal lebar agar tidak terlalu melar di layar besar */
+    height: auto;            /* Tinggi menyesuaikan otomatis agar proporsional dan tidak gepeng */
+    margin: 30px auto;       /* Posisi otomatis di tengah (atas-bawah 30px, kiri-kanan auto) */
+    border: 1px solid white; /* Garis pinggir/border putih 1 px */
+    border-radius: 12px;   
+}
+
+.logo-preview-2 {
+    display: block;          /* Agar gambar menjadi block elemen dan bisa ditengahin */
+    width: 200%;              /* Lebar banner memenuhi sebagian besar layar */
+    max-width: 1000px;       /* Batas maksimal lebar agar tidak terlalu melar di layar besar */
+    height: auto;            /* Tinggi menyesuaikan otomatis agar proporsional dan tidak gepeng */
+    margin: 30px auto;       /* Posisi otomatis di tengah (atas-bawah 30px, kiri-kanan auto) */
+    border: 1px solid white; /* Garis pinggir/border putih 1 px */
+    border-radius: 12px;   
+}
+
+/* Tombol Pemicu List Jualan */
+.toggle-list-btn {
+    margin-top: 35px;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.toggle-list-btn:hover {
+    background-color: rgba(50, 50, 50, 0.95);
+    border-color: #25d366;
+    transform: translateY(-3px);
+}
+
+/* Kotak Dropdown List Jualan (Awalnya Sembunyi) */
+.jualan-dropdown-box {
+    display: none; /* Disembunyikan dulu secara default */
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(15, 15, 15, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    margin-top: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+    text-align: left;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.jualan-dropdown-box h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* Daftar Item Jualan */
+.jualan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.jualan-list li {
+    padding: 10px 12px;
+    background-color: rgba(30, 30, 30, 0.6);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #dddddd;
+    font-size: 13px;
+    border-left: 3px solid #25d366;
+}
+
+/* Tombol Pesan di dalam Kotak List */
+.buy-from-list-btn {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #ffffff;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.buy-from-list-btn:hover {
+    transform: scale(1.02);
+}
+
+/* Animasi Muncul Halus */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container Utama untuk Bagian Preview */
+/* Container Utama untuk Bagian Preview */
+.preview-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+/* Judul Kecil Preview */
+.preview-section .section-title {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Mengatur Barisan Gambar */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Styling Gambar Preview */
+.preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Teks Keterangan di Bawah Gambar */
+.image-box p {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   PENGATURAN OTOMATIS BERDASARKAN LAYAR (RESPONSIVE)
+   ========================================== */
+
+/* 1. KHUSUS UNTUK LAPTOP / PC (Layar Lebar) */
+@media (min-width: 769px) {
+    .image-row {
+        flex-wrap: nowrap; /* Tetap dalam satu baris */
+    }
+    .image-box {
+        width: 360px; /* Diperbesar dari 320px ke 360px agar lebih besar tapi tetap muat 3 buah */
+        background-color: rgba(20, 20, 20, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 14px;
+        padding: 12px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+    .image-box:hover {
+        transform: translateY(-5px);
+        border-color: #25d366;
+    }
+}
+
+/* 2. KHUSUS UNTUK HP / MOBILE (Layar Kecil) */
+@media (max-width: 768px) {
+    .image-row {
+        flex-wrap: wrap; /* Turun ke bawah secara berurutan agar besar & jelas */
+        gap: 20px;
+    }
+    .image-box {
+        width: 100%;  /* Lebar memenuhi layar HP */
+        max-width: 400px; /* Ukuran besar ala mobile view */
+        background-color: rgba(20, 20, 20, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+        box-sizing: border-box;
+    }
+}
+
+/* Styling Tombol Direct Saluran WhatsApp */
+.channel-direct-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 35, 30, 0.9);
+    color: #ffffff;
+    border: 1px solid #25d366; /* Garis hijau khas WhatsApp */
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+    margin-top: 25px;
+}
+
+.channel-direct-btn:hover {
+    background-color: rgba(37, 211, 102, 0.3);
+    border-color: #25d366;
+    transform: translateY(-3px);
+}
+
+/* Kotak List Jualan (Dibuat Rata Tengah & Pas) */
+#listJualan {
+    width: 100%;
+    max-width: 800px;            /* Atur lebar maksimal kotak list */
+    margin: 20px auto 0 auto;    /* 'auto' di kiri-kanan membuat posisinya persis di tengah */
+    background-color: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
+    text-align: left;            /* Teks di dalamnya tetap rata kiri agar mudah dibaca */
+    display: none;               /* Awalnya tersembunyi, akan muncul saat tombol diklik */
+}
+
+/* Kelas tambahan untuk menampilkan list (jika menggunakan fungsi JavaScript class toggle) */
+#listJualan.show {
+    display: block;
+}
+
+/* Styling Intro Screen (Layar Pembuka Fullscreen Gelap) */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b0b0b; /* Warna latar belakang gelap khas gaming */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Memastikan posisinya paling atas menutupi segalanya */
+    transition: opacity 0.5s ease;
+}
+
+/* Konten Teks & Animasi Muncul */
+.intro-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.intro-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #25d366; /* Warna hijau terang langsung tanpa gradasi, dijamin bersih dari garis merah */
+    letter-spacing: 2px;
+    animation: fadeInScale 1.2s ease-in-out forwards;
+}
+
+/* Garis Loading Kecil di Bawah Teks */
+.intro-loader {
+    width: 60px;
+    height: 3px;
+    background-color: #25d366;
+    border-radius: 3px;
+    animation: loadingBar 1.5s infinite ease-in-out;
+}
+
+/* Keyframes untuk Efek Gerakan Animasi */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes loadingBar {
+    0% {
+        width: 10px;
+        opacity: 0.3;
+    }
+    50% {
+        width: 80px;
+        opacity: 1;
+    }
+    100% {
+        width: 10px;
+        opacity: 0.3;
+    }
+}
+
+/* ==========================================
+   INTRO SCREEN MEWAH & ELEGAN
+   ========================================== */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Teks Mewah dengan Efek Glow */
+.intro-text {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.2);
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Kotak Loading Bar Modern */
+.intro-loader-box {
+    width: 260px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Efek Cahaya Berjalan di Dalam Loading Bar */
+.intro-loader-bar {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #25d366, #ffffff, #25d366, transparent);
+    animation: luxuryLoading 1.8s infinite cubic-bezier(0.65, 0, 0.35, 1);
+    box-shadow: 0 0 12px #25d366;
+}
+
+/* Animasi Keyframes */
+@keyframes textGlow {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.98);
+        text-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 25px rgba(37, 211, 102, 0.8), 0 0 50px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@keyframes luxuryLoading {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
